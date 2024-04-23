@@ -9,10 +9,9 @@ pipeline {
                 }
             }
         }
-        steps{
-
+        steps {
            sh 'docker run -d -p 80:80 nginx'
                }
-    }
+    } 
     // You can define post actions, notifications, etc. here
 }
