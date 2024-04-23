@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Pull Docker Image') {
+            steps {
+                script {
+                    docker.image('nginx:latest').pull()
+                }
+            }
+        }
+        steps{
+
+           sh 'docker run -d -p 80:80 nginx'
+               }
+    }
+    // You can define post actions, notifications, etc. here
+}
