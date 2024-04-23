@@ -8,10 +8,12 @@ pipeline {
                     docker.image('nginx:latest').pull()
                 }
             }
-        }
-        steps {
-           sh 'docker run -d -p 80:80 nginx'
+        } 
+        stage('Run Docker Image') {
+          steps {
+             sh 'docker run -d -p 80:80 nginx'
                }
-    } 
-    // You can define post actions, notifications, etc. here
+    }
+ }
+// You can define post actions, notifications, etc. here
 }
