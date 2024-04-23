@@ -16,6 +16,13 @@ pipeline {
       steps {
         sh 'node --version'
     }
+stage('front-end') {
+      agent {
+        docker { image 'nginx:latest' }
+      }
+      steps {
+        sh 'nginx -v'
+      }
   }
 }
 }
